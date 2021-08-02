@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 import 'weather-icons/css/weather-icons.css';
 
 import MainContent from './components/MainContent/MainContent';
 import SearchForm from './components/SearchForm/SearchForm';
 import { Container } from './styles';
+import getValuesFromApi from './api/GetWeatherApi';
 
 const API_key = "29ec9a13086077b075b204981e1ae5d4";
 
@@ -19,7 +21,7 @@ const App = () => {
     temp_max: undefined,
     temp_min: undefined,
     description: "",
-    error: false
+    error: undefined
   });
 
   const weatherIcon = {
@@ -66,31 +68,29 @@ const App = () => {
     const city = e.target.elements.city.value;
     const country = e.target.elements.city.value;
 
-
-    try {
-      if (city && country) {
-        const api_call = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`);
-
-        const response = await api_call.json();
-
-        SetValue({
-          city: `${response.name}, ${response.sys.country}`,
-          celsius: calCelsius(response.main.temp),
-          temp_max: calCelsius(response.main.temp_max),
-          temp_min: calCelsius(response.main.temp_min),
-          description: response.weather[0].description,
-          icon: get_WeatherIcon(response.weather[0].id),
-          error: false
+    // https://cors-anywhere.herokuapp.com/
+    if (city && country) {
+      axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`)
+        .then(function (response) {
+          SetValue({
+            city: `${response.data.name}, ${response.data.sys.country}`,
+            celsius: calCelsius(response.data.main.temp),
+            temp_max: calCelsius(response.data.main.temp_max),
+            temp_min: calCelsius(response.data.main.temp_min),
+            description: response.data.weather[0].description,
+            icon: get_WeatherIcon(response.data.weather[0].id),
+            error: false
+          })
         })
-
-      } else {
-        SetValue({
-          error: true
-        })
-      }
-    } catch (error) {
+        .catch(function (error) {
+          SetValue({
+            error: "Check if you don't have any typo"
+          })
+          console.log(error);
+        });
+    } else {
       SetValue({
-        error: true
+        error: "Insert City and Country"
       })
     }
   };

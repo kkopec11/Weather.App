@@ -6,7 +6,7 @@ const MainContent = (props) => {
     return (
         <Section >
             <Div>
-                {props.error && (<div> Please Enter City and Country </div>)}
+                {props.error && (<div> {props.error}</div>)}
                 <h1>
                     {props.city}
                 </h1>
