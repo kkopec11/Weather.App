@@ -10,6 +10,7 @@ display: grid;
 grid-template-rows: 2fr 1fr 1fr;
 width: 100%;
 height: 100%;
+justify-content: center;
 `;
 
 export const Form = styled.form`
@@ -21,7 +22,7 @@ align-items: center;
 
 export const Title = styled.h1`
 font-weight: 800;
-font-size: 2.5rem;
+font-size: 2.8rem;
 line-height:56px;
 width: max-content;
 max-width: 100%;
@@ -42,6 +43,12 @@ border-radius: 3px;
 width: 22rem;
 height: 1.5rem;
 box-shadow: 3px 3px 20px #ff2e00;
+transition: .3s ease;
+
+&:hover {
+    box-shadow: 3px 3px 20px #00ff10;
+    cursor: pointer;
+}
 `;
 
 export const Button = styled.button`
@@ -58,6 +65,7 @@ transition: .3s ease;
 
 &:hover {
     color: rgba(255, 255, 255, 0.75);
+    box-shadow: 3px 3px 20px rgba(255, 255, 255, 0.75);
     opacity: 1;
     cursor: pointer;
 }

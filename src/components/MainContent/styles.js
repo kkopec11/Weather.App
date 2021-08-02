@@ -10,3 +10,9 @@ align-content: center;
 flex-direction: column;
 `;
 
+export const Div = styled.div`
+display: grid;
+justify-content: center;
+text-align: center;
+font-size: 1.3rem;
+`;

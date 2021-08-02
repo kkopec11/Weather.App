@@ -67,22 +67,28 @@ const App = () => {
     const country = e.target.elements.city.value;
 
 
-    if (city && country) {
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`);
+    try {
+      if (city && country) {
+        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`);
 
-      const response = await api_call.json();
+        const response = await api_call.json();
 
-      SetValue({
-        city: `${response.name}, ${response.sys.country}`,
-        celsius: calCelsius(response.main.temp),
-        temp_max: calCelsius(response.main.temp_max),
-        temp_min: calCelsius(response.main.temp_min),
-        description: response.weather[0].description,
-        icon: get_WeatherIcon(response.weather[0].id),
-        error: false
-      })
+        SetValue({
+          city: `${response.name}, ${response.sys.country}`,
+          celsius: calCelsius(response.main.temp),
+          temp_max: calCelsius(response.main.temp_max),
+          temp_min: calCelsius(response.main.temp_min),
+          description: response.weather[0].description,
+          icon: get_WeatherIcon(response.weather[0].id),
+          error: false
+        })
 
-    } else {
+      } else {
+        SetValue({
+          error: true
+        })
+      }
+    } catch (error) {
       SetValue({
         error: true
       })
@@ -104,6 +110,5 @@ const App = () => {
     </Container>
   );
 }
-
 
 export default App;
