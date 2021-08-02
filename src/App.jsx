@@ -6,7 +6,6 @@ import 'weather-icons/css/weather-icons.css';
 import MainContent from './components/MainContent/MainContent';
 import SearchForm from './components/SearchForm/SearchForm';
 import { Container } from './styles';
-import getValuesFromApi from './api/GetWeatherApi';
 
 const API_key = "29ec9a13086077b075b204981e1ae5d4";
 
