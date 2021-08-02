@@ -6,7 +6,7 @@ import MainContent from './components/MainContent/MainContent';
 import SearchForm from './components/SearchForm/SearchForm';
 import { Container } from './styles';
 
-const API_key = "2f8366e6fb3080bd2509b0d05f55cbe8";
+const API_key = "29ec9a13086077b075b204981e1ae5d4";
 
 const App = () => {
 
