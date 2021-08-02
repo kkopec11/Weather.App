@@ -42,7 +42,6 @@ border-radius: 3px;
 width: 22rem;
 height: 1.5rem;
 box-shadow: 3px 3px 20px #ff2e00;
-
 `;
 
 export const Button = styled.button`
