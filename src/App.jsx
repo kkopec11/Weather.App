@@ -22,7 +22,7 @@ const App = () => {
     error: false
   });
 
-  const [weatherIcon, SetWeatherIcon] = useState({
+  const weatherIcon = {
     Thunderstorm: "wi-thunderstorm",
     Drizzle: "wi-sleet",
     Rain: "wi-storm-showers",
@@ -30,7 +30,7 @@ const App = () => {
     Atmosphere: "wi-fog",
     Clear: "wi-day-sunny",
     Clouds: "wi-day-fog"
-  });
+  };
 
 
   const calCelsius = (temp) => {
