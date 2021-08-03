@@ -69,7 +69,7 @@ const App = () => {
 
     // https://cors-anywhere.herokuapp.com/
     if (city && country) {
-      axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`)
+      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`)
         .then(function (response) {
           SetValue({
             city: `${response.data.name}, ${response.data.sys.country}`,
