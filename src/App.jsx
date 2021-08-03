@@ -7,7 +7,7 @@ import MainContent from './components/MainContent/MainContent';
 import SearchForm from './components/SearchForm/SearchForm';
 import { Container } from './styles';
 
-const API_key = "29ec9a13086077b075b204981e1ae5d4";
+const API_key = "255b2c305252424f4ed4022038f7648e";
 
 const App = () => {
 
