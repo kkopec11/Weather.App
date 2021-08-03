@@ -83,7 +83,7 @@ const App = () => {
         })
         .catch(function (error) {
           SetValue({
-            error: "Check if you don't have any typo"
+            error: "Check if you don't have any typo. If this error is sill occuing please visit this side https://cors-anywhere.herokuapp.com/ and request for acces to the server (its necessary because of the CORS policy)"
           })
           console.log(error);
         });
