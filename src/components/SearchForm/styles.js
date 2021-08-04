@@ -31,7 +31,7 @@ align-items: center;
 
 @media ${(props) => props.theme.breakpoints.sm} {
   flex-direction: column;
-
+  padding-left: 0.7rem;
 }
 `;
 
