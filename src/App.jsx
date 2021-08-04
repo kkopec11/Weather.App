@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from "axios";
-
+import Theme from './theme/Theme'
 import 'weather-icons/css/weather-icons.css';
 
 import MainContent from './components/MainContent/MainContent';
@@ -83,7 +83,7 @@ const App = () => {
         })
         .catch(function (error) {
           SetValue({
-            error: "Check if you don't have any typo. If this error is sill occuing please visit this side https://cors-anywhere.herokuapp.com/ and request for acces to the server (its necessary because of the CORS policy)"
+            error: "Check if you don't have any typo. If this error is sill occuing please visit this side - https://cors-anywhere.herokuapp.com/ and request for acces to the server (its necessary because of the CORS policy)"
           })
           console.log(error);
         });
@@ -95,18 +95,20 @@ const App = () => {
   };
 
   return (
-    <Container align-items="center">
-      <SearchForm loadweather={getWeather} />
-      <MainContent
-        city={value.city}
-        temp_celsius={value.celsius}
-        temp_max={value.temp_max}
-        temp_min={value.temp_min}
-        description={value.description}
-        weatherIcon={value.icon}
-        error={value.error}
-      />
-    </Container>
+    <Theme>
+      <Container align-items="center">
+        <SearchForm loadweather={getWeather} />
+        <MainContent
+          city={value.city}
+          temp_celsius={value.celsius}
+          temp_max={value.temp_max}
+          temp_min={value.temp_min}
+          description={value.description}
+          weatherIcon={value.icon}
+          error={value.error}
+        />
+      </Container>
+    </Theme>
   );
 }
 

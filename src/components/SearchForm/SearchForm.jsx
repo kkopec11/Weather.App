@@ -7,6 +7,7 @@ const SearchForm = props => {
         <Container >
             <FormSection>
                 <Title>Insert the names of the City and the Country for checking the weather!</Title>
+                {/* <DivForm> */}
                 <Form onSubmit={props.loadweather}>
                     <Section >
                         <Input type="text" name="city" placeholder="City"></Input>
@@ -18,6 +19,7 @@ const SearchForm = props => {
                         <Button >Get the Weather</Button>
                     </Section>
                 </Form>
+                {/* </DivForm> */}
             </FormSection>
         </Container>
     )
