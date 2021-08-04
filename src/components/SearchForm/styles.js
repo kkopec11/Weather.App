@@ -5,7 +5,7 @@ margin-top: 4rem;
 grid-area: 1 / 2 / 2 / 3;
 
 @media ${(props) => props.theme.breakpoints.sm} {
-    margin-top: 2rem;
+    margin-top: 0;
     grid-area: 1 / 2 / 2 / 2;
 
   }
@@ -44,17 +44,10 @@ background: linear-gradient(121.57deg, #fd1d1d   , #fcb045);
 -webkit-text-fill-color: transparent;
 
 @media ${(props) => props.theme.breakpoints.sm} {
-  max-width: 50rem;
-  font-size: 5rem;
-  line-height:106px;
+  font-size: 1.5rem;
+  line-height: 40px;
   margin-left: 2rem;
-}
-
-@media ${(props) => props.theme.breakpoints.md} {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: auto;
- width: 70rem;
+  width: 17rem;
 }
 
 `;
@@ -63,7 +56,7 @@ export const Section = styled.div`
 margin: 1rem;
 
 @media ${(props) => props.theme.breakpoints.sm} {
-  margin: 3rem;
+  margin: 1.3rem;
 }
 `;
 
@@ -83,11 +76,17 @@ transition: .3s ease;
 }
 
 @media ${(props) => props.theme.breakpoints.sm} {
-  width: 40rem;
-  height: 4rem;
-  font-size: 3rem; 
+  width: 13rem;
+  height: 1.2rem;
+  font-size: 1.3rem; 
   padding: 0.5rem 0.7rem;
+  box-shadow: 1px 1px 10px #ff2e00;
+  transition: .3s ease;
 
+&:hover {
+    box-shadow: 1px 1px 10px #00ff10;
+    cursor: pointer;
+}
 }
 `;
 
@@ -111,10 +110,16 @@ transition: .3s ease;
 }
 
 @media ${(props) => props.theme.breakpoints.sm} {
-  width: 41rem;
-  height: 6rem;
-  font-size: 3rem; 
+  width: 15rem;
+  height: 3.5rem;
+  font-size: 1.2rem; 
   padding: 0.5rem 0.7rem;
+  box-shadow: 1px 1px 10px #ff2e00;
+  transition: .3s ease;
 
+&:hover {
+    box-shadow: 1px 1px 10px #00ff10;
+    cursor: pointer;
+}
 }
 `;

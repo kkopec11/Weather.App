@@ -12,10 +12,6 @@ flex-direction: column;
     grid-area: 2 / 2 / 3 / 3;
   }
 
-  @media ${(props) => props.theme.breakpoints.md} {
-    margin-top: 2rem;
-
-}
 `;
 
 export const Div = styled.div`
@@ -25,7 +21,7 @@ text-align: center;
 font-size: 1.3rem;
 
 @media ${(props) => props.theme.breakpoints.sm} {
-  font-size: 3rem;
+  font-size: 1rem;
 
   }
 `;

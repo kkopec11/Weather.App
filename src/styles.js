@@ -8,7 +8,7 @@ grid-template-rows: 20rem 1fr;
 @media ${(props) => props.theme.breakpoints.sm} {
   display: grid;
   grid-template-columns:  1fr ;
-  grid-template-rows: 70rem 1fr;    
+  grid-template-rows: 30rem 1fr;    
   flex-direction: column;
   width: 100%;
   }
