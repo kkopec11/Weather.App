@@ -7,8 +7,6 @@ import MainContent from './components/MainContent/MainContent';
 import SearchForm from './components/SearchForm/SearchForm';
 import { Container } from './styles';
 
-const API_key = "255b2c305252424f4ed4022038f7648e";
-
 const App = () => {
 
   const [value, SetValue] = useState({
@@ -67,10 +65,14 @@ const App = () => {
     const city = e.target.elements.city.value;
     const country = e.target.elements.city.value;
 
-    // https://cors-anywhere.herokuapp.com/
     if (city && country) {
-      axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city},${country}$&APPID=${API_key}`)
-        .then(function (response) {
+      axios.get(`https://community-open-weather-map.p.rapidapi.com/weather?q=${city},${country}`, {
+        headers: {
+          'x-rapidapi-key': 'ef67824912mshaee8856ebf1c80dp1c448cjsne5f86a9c83b7',
+          'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
+        },
+      })
+      .then(function (response) {
           SetValue({
             city: `${response.data.name}, ${response.data.sys.country}`,
             celsius: calCelsius(response.data.main.temp),
