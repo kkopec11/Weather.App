@@ -6,3 +6,7 @@ rather than having to enter those variables manually.
 
 Setup:
 - run ```npm i && npm start``` 
+
+
+Live:
+https://weather-app-kkopec.netlify.app/
